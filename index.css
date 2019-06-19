@@ -7,10 +7,17 @@ body {
 }
 
 .container {
-  max-width: 600px;
+ /* max-width: 600px;*/
   margin: 0 auto;
 }
 
 .hidden {
   display: none;
+}
+.results-img, .results-news{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  /*margin: 5px;*/
+  background-color: red;
 }
