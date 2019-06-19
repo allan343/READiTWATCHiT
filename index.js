@@ -30,15 +30,16 @@ function displayResults(responseJson) {
   let link="";
   //replace the existing image with the new one
   
-for(let i =0; i< responseJson.length;i++)
+for(let i =0; i< responseJson.items.length;i++)
   {
    // link += `<img src="${responseJson.message[i]}" class="results-img">`;
   
   //display the results section
 
   $('.results-img').append(
-    `<li><h3><a href="https://www.youtube.com/embed/${responseJson[i].id.videoId}">${responseJson[i].snippet.title}</a></h3>`);
-
+   // `<li><h3><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">${responseJson.items[i].snippet.title}</a></h3>`);
+   `<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
+   </iframe></li>`);
 
 
 
