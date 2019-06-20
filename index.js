@@ -75,7 +75,8 @@ for(let i =0; i< responseJson.items.length;i++)
   //display the results section
 
   $('.results-img').append(
-    `<li><h3><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">${responseJson.items[i].snippet.title}</a></h3>`);
+    `<li><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"  title="White flower" alt="Flower"></a>
+    <p><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">${responseJson.items[i].snippet.title}</a></p><p>${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>`);
    //`<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
    //</iframe></li>`);
 
@@ -104,7 +105,9 @@ function displayNewsResults(responseJson, maxResults) {
     //list with the article title, source, author,
     //description, and image
     $('.results-news').append(
-      `<li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
+      `<li>
+      <a href="${responseJson.articles[i].url}"><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
+      <h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
       <p>${responseJson.articles[i].source.name}</p>
       <p>By ${responseJson.articles[i].author}</p>
       <p>${responseJson.articles[i].description}</p>
