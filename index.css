@@ -38,8 +38,9 @@ li {
   
 }
 
-.results-img .image{
-  width: 190px;
+.results-img .image, .results-news .image{
+  /*width: 190px;*/
+  margin-top:20px;
   float: left;
 }
 
@@ -60,7 +61,7 @@ li {
   display: block;
   font-size:16px;
 }
-.date{
+.date,.source, .author{
   font-size: 13px;
 }
 

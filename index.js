@@ -111,12 +111,14 @@ function displayNewsResults(responseJson, maxResults) {
     //description, and image
     $('.results-news').append(
       `<li>
+      <div class="image">
       <a href="${responseJson.articles[i].url}"><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
-      <h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
-      <p>${responseJson.articles[i].source.name}</p>
-      <p>By ${responseJson.articles[i].author}</p>
-      <p>${responseJson.articles[i].description}</p>
+      </div>
+      <div class="video-content">
+      <p class ="title"><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></p>
+      <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       
+      </div>
       </li>`
     )};
   //display the results section  
