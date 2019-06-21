@@ -76,10 +76,13 @@ for(let i =0; i< responseJson.items.length;i++)
 
   $('.results-img').append(
     `<li>
+    
     <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"  title="White flower" alt="Flower"></a>
     </div>
+  
     <div class="video-content">
     <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
+    <p class="description"> Read Description</p>
     </div>
     `);
    //`<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
@@ -117,6 +120,7 @@ function displayNewsResults(responseJson, maxResults) {
       <div class="video-content">
       <p class ="title"><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></p>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
+      <p class="description"> Read Description</p>
       
       </div>
       </li>`
