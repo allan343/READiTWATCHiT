@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: grey;
 }
 
 .container {
@@ -25,7 +26,7 @@ body {
   width: 47%;
   height: 100%;
   list-style: none; 
-  background-color: red;
+  background-color: white;
 }
 
 li {
