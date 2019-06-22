@@ -1,7 +1,7 @@
 var dogCount = 0;
 
 'use strict';
-
+var STORE = {ytapi: responseJSON};
 
 const apiKey ="352d6669b5f446188152fd93ee7ccf52";
 
@@ -9,8 +9,8 @@ const searchURL = 'https://newsapi.org/v2/everything';
 
 
 function displayModal(){
-  $('.container').on('click', '.myButton', function (event) {
-    $('.myModal').css('display', 'block')});
+  $('.container').on('click', '.description', function (event) {
+    $('#myModal').css('display', 'block')});
 }
 
 function formatQueryParams(params) {
@@ -55,7 +55,9 @@ function getYTImages(query) {
   fetch(url)
     .then(response => response.json())
     .then(responseJson => 
-      displayResults(responseJson))
+    { ytap = responseJson
+      displayResults(responseJson)
+      displayModal()})
     .catch(error =>{
 
       console.log(error.message);
@@ -86,8 +88,8 @@ for(let i =0; i< responseJson.items.length;i++)
     </div>
   
     <div class="video-content">
-    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
-    <p class="description"> Read Description</p>
+    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
+    <button type="button" class= "description">Read Description</button>
     </div>
     `);
    //`<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
@@ -123,7 +125,7 @@ function displayNewsResults(responseJson, maxResults) {
       <a href="${responseJson.articles[i].url}" data-lity><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
       </div>
       <div class="video-content">
-      <p class ="title"><a href="${responseJson.articles[i].url}" data-lity>${responseJson.articles[i].title}</a></p>
+      <p class ="title"><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></p>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <p class="description"> Read Description</p>
       
@@ -134,16 +136,20 @@ function displayNewsResults(responseJson, maxResults) {
   $('.results').removeClass('hidden');
 };
 
+
+
 function watchForm() {
     var query;
   $('form').submit(event => {
     query=$('.query-number').val();
     console.log(query);
     event.preventDefault();
-   
+   // $('#myModal').css('display', 'block')
     getYTImages(query);
     getNews(query, 7);
   });
+
+  
 }
 
 $(function() {
