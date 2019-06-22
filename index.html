@@ -6,15 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dog API Example</title>
     <link rel="stylesheet" href="index.css">
+    <link href="lity-2.3.1/dist/lity.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-</head>
+    <script src="lity-2.3.1/vendor/jquery.js"></script>
+    <script src="lity-2.3.1/dist/lity.js"></script>
+
+  </head>
 <body>
     <div class="container">
         <h1>Read It Watch It</h1>
 
         <form>
                 <input placeholder="3" type="text" name="query-number" class="query-number" />
-          <input type="submit" value="Get results">
+          <input class ="myButton" type="submit" value="Get results">
         </form>
         <section class="results hidden">
           
@@ -25,6 +29,15 @@
 
           </ul>
         
+          
+          </div>
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
         </section>
     </div>
     <script src="index.js"></script>

@@ -8,6 +8,11 @@ const apiKey ="352d6669b5f446188152fd93ee7ccf52";
 const searchURL = 'https://newsapi.org/v2/everything';
 
 
+function displayModal(){
+  $('.container').on('click', '.myButton', function (event) {
+    $('.myModal').css('display', 'block')});
+}
+
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -77,11 +82,11 @@ for(let i =0; i< responseJson.items.length;i++)
   $('.results-img').append(
     `<li>
     
-    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}"><img src="${responseJson.items[i].snippet.thumbnails.default.url}"  title="White flower" alt="Flower"></a>
+    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}"  title="White flower" alt="Flower"></a>
     </div>
   
     <div class="video-content">
-    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
+    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
     <p class="description"> Read Description</p>
     </div>
     `);
@@ -115,10 +120,10 @@ function displayNewsResults(responseJson, maxResults) {
     $('.results-news').append(
       `<li>
       <div class="image">
-      <a href="${responseJson.articles[i].url}"><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
+      <a href="${responseJson.articles[i].url}" data-lity><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
       </div>
       <div class="video-content">
-      <p class ="title"><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></p>
+      <p class ="title"><a href="${responseJson.articles[i].url}" data-lity>${responseJson.articles[i].title}</a></p>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <p class="description"> Read Description</p>
       
