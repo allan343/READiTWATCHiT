@@ -15,13 +15,27 @@ function displayModal(){
     console.log("index is " + $(this).attr('index'));
     var index = $(this).attr('index');
   
-    $('.modal-content').html(YTclips[index].description);
+    $('.modal-content').append(
+    
+  `<p> ${YTclips[index].title}</p>
+  <hr>
+  <p>${YTclips[index].date} - ${YTclips[index].channelTitle}</p>
+  <p>${YTclips[index].description}</p>`
+      );
   
   
   });
   
 }
 
+function closeModal(){
+  $('.container').on('click', '.close', function (event) {
+    $('#myModal').css("display", "none");
+    $('.modal-content').html( `<button class="close">&times;</button>`);
+  
+  });
+  
+}
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -114,6 +128,7 @@ for(let i =0; i< responseJson.items.length;i++)
     <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
     <button type="button" class= "description" index="${i}">Read Description</button>
     </div>
+    </li>
     `);
    //`<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
    //</iframe></li>`);
@@ -175,6 +190,7 @@ function watchForm() {
   });
 
   displayModal();
+  closeModal();
 }
 
 $(function() {
