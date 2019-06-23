@@ -1,7 +1,7 @@
 var dogCount = 0;
 
 'use strict';
-var STORE = {ytapi: responseJSON};
+var YTclips =[];
 
 const apiKey ="352d6669b5f446188152fd93ee7ccf52";
 
@@ -10,7 +10,16 @@ const searchURL = 'https://newsapi.org/v2/everything';
 
 function displayModal(){
   $('.container').on('click', '.description', function (event) {
-    $('#myModal').css('display', 'block')});
+    $('#myModal').css('display', 'block');
+    
+    console.log("index is " + $(this).attr('index'));
+    var index = $(this).attr('index');
+  
+    $('.modal-content').html(YTclips[index].description);
+  
+  
+  });
+  
 }
 
 function formatQueryParams(params) {
@@ -55,9 +64,14 @@ function getYTImages(query) {
   fetch(url)
     .then(response => response.json())
     .then(responseJson => 
-    { ytap = responseJson
+    {
+     // STORE = {ytapi: responseJson};
+      // ytapi = responseJson;
+     //console.log("ytapi is " + ytapi.items[0]);
+     console.log(responseJson)
       displayResults(responseJson)
-      displayModal()})
+     // displayModal()
+    })
     .catch(error =>{
 
       console.log(error.message);
@@ -80,7 +94,16 @@ for(let i =0; i< responseJson.items.length;i++)
    // link += `<img src="${responseJson.message[i]}" class="results-img">`;
   
   //display the results section
+    var youtubeOject = {
+      videoId: responseJson.items[i].id.videoId,
+      url: responseJson.items[i].snippet.thumbnails.default.url,
+      title: responseJson.items[i].snippet.title,
+      date: responseJson.items[i].snippet.publishedAt,
+      channelTitle: responseJson.items[i].snippet.channelTitle,
+      description: responseJson.items[i].snippet.description
+    }
 
+    YTclips[i]=youtubeOject;
   $('.results-img').append(
     `<li>
     
@@ -89,7 +112,7 @@ for(let i =0; i< responseJson.items.length;i++)
   
     <div class="video-content">
     <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
-    <button type="button" class= "description">Read Description</button>
+    <button type="button" class= "description" index="${i}">Read Description</button>
     </div>
     `);
    //`<li><iframe width="420" height="345" src="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}">
@@ -100,6 +123,8 @@ for(let i =0; i< responseJson.items.length;i++)
 
   
   }
+
+  console.log("store is "+ YTclips[3].title);
   /*$('.results-img').html(
     image
    );*/
@@ -149,7 +174,7 @@ function watchForm() {
     getNews(query, 7);
   });
 
-  
+  displayModal();
 }
 
 $(function() {
