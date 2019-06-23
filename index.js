@@ -20,7 +20,9 @@ function displayModal(){
   `<p> ${YTclips[index].title}</p>
   <hr>
   <p>${YTclips[index].date} - ${YTclips[index].channelTitle}</p>
-  <p>${YTclips[index].description}</p>`
+  <p>${YTclips[index].description}</p>
+  <p class ="title"><a href="https://www.youtube.com/embed/${YTclips[index].url}" index="i" data-lity>${YTclips[index].title}</a></p>
+  `
       );
   
   
