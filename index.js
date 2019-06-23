@@ -21,7 +21,7 @@ function displayModal(){
   <hr>
   <p>${YTclips[index].date} - ${YTclips[index].channelTitle}</p>
   <p>${YTclips[index].description}</p>
-  <p class ="title"><a href="https://www.youtube.com/embed/${YTclips[index].url}" index="i" data-lity>${YTclips[index].title}</a></p>
+  <p class ="title"><a href="https://www.youtube.com/embed/${YTclips[index].videoId}" index="i" data-lity>${YTclips[index].title}</a></p>
   `
       );
   
