@@ -10,18 +10,23 @@ const searchURL = 'https://newsapi.org/v2/everything';
 
 function displayModal(){
   $('.container').on('click', '.description', function (event) {
-    $('#myModal').css('display', 'block');
+    $('#videoModal').css('display', 'block');
     
     console.log("index is " + $(this).attr('index'));
     var index = $(this).attr('index');
   
-    $('.modal-content').append(
+    $('.videoModal-content').html(
     
-  `<p> ${YTclips[index].title}</p>
+  `
+  <button class="close">&times;</button>
+  <p> ${YTclips[index].title}</p>
   <hr>
   <p>${YTclips[index].date} - ${YTclips[index].channelTitle}</p>
   <p>${YTclips[index].description}</p>
-  <p class ="title"><a href="https://www.youtube.com/embed/${YTclips[index].videoId}" index="i" data-lity>${YTclips[index].title}</a></p>
+  <div class= "buttonContainer">
+  <a href="https://www.youtube.com/embed/${YTclips[index].videoId}" class ="videoUrlButton" index="i" data-lity>Go to Video</a>
+ </div>
+ 
   `
       );
   
@@ -32,11 +37,18 @@ function displayModal(){
 
 function closeModal(){
   $('.container').on('click', '.close', function (event) {
-    $('#myModal').css("display", "none");
-    $('.modal-content').html( `<button class="close">&times;</button>`);
+    $('#videoModal').css("display", "none");
+    $('.videoModal-content').html( `<button class="close">&times;</button>`);
   
   });
   
+}
+
+function watchVideo(){
+  $('.container').on('click', '.videoUrlButton', function (event) {
+    $('#videoModal').css("display", "none");
+
+  });
 }
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
@@ -193,6 +205,7 @@ function watchForm() {
 
   displayModal();
   closeModal();
+  watchVideo();
 }
 
 $(function() {
