@@ -51,6 +51,49 @@ function watchVideo(){
 
   });
 }
+
+function displayNewsModal(){
+  $('.container').on('click', '.newsDescription', function (event) {
+    $('#newsModal').css('display', 'block');
+    
+    console.log("index is " + $(this).attr('index'));
+    var index = $(this).attr('index');
+  
+    $('.newsModal-content').html(
+    
+  `
+  <button class="close">&times;</button>
+  <p> ${Newsclips[index].title}</p>
+  <hr>
+  <p>${Newsclips[index].source} - ${YTclips[index].Author}</p>
+  <p>${Newsclips[index].description}</p>
+  <div class= "buttonContainer">
+  <a href=" ${Newsclips[index].url}" class ="readArticleButton" target="_blank">Read Article</a>
+ </div>
+ 
+  `
+      );
+  
+  
+  });
+  
+}
+
+function closeNewsModal(){
+  $('.container').on('click', '.close', function (event) {
+    $('#newsModal').css("display", "none");
+    $('.newsModal-content').html( `<button class="close">&times;</button>`);
+  
+  });
+  
+}
+
+function readArticle(){
+  $('.container').on('click', '.newsArticleButton', function (event) {
+    $('#newsModal').css("display", "none");
+
+  });
+}
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -179,7 +222,8 @@ function displayNewsResults(responseJson, maxResults) {
       title: responseJson.articles[i].title,
       source: responseJson.articles[i].source.name,
       author: responseJson.articles[i].author,
-      description: responseJson.articles[i].description
+      description: responseJson.articles[i].description,
+      url: responseJson.articles[i].url
     }
 
     Newsclips[i]=newsOject;
@@ -192,7 +236,7 @@ function displayNewsResults(responseJson, maxResults) {
       <div class="video-content">
       <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></p>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
-      <p class="description"> Read Description</p>
+      <button type="button" class= "newsDescription" index="${i}">Read Description</button>
       
       </div>
       </li>`
@@ -217,6 +261,9 @@ function watchForm() {
   displayVideoModal();
   closeVideoModal();
   watchVideo();
+  displayNewsModal();
+  closeNewsModal();
+  readArticle();
 }
 
 $(function() {
