@@ -72,7 +72,7 @@ a{
 }
 
 
-.modal {
+.videoModal, .newsModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -87,7 +87,7 @@ a{
 }
 
 /* Modal Content */
-.videoModal-content {
+.videoModal-content, .newsModal-content {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;

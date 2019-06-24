@@ -2,13 +2,14 @@ var dogCount = 0;
 
 'use strict';
 var YTclips =[];
+var Newsclips =[];
 
 const apiKey ="352d6669b5f446188152fd93ee7ccf52";
 
 const searchURL = 'https://newsapi.org/v2/everything';
 
 
-function displayModal(){
+function displayVideoModal(){
   $('.container').on('click', '.description', function (event) {
     $('#videoModal').css('display', 'block');
     
@@ -35,7 +36,7 @@ function displayModal(){
   
 }
 
-function closeModal(){
+function closeVideoModal(){
   $('.container').on('click', '.close', function (event) {
     $('#videoModal').css("display", "none");
     $('.videoModal-content').html( `<button class="close">&times;</button>`);
@@ -173,13 +174,23 @@ function displayNewsResults(responseJson, maxResults) {
     //array, add a list item to the results 
     //list with the article title, source, author,
     //description, and image
+
+    var newsOject = {
+      title: responseJson.articles[i].title,
+      source: responseJson.articles[i].source.name,
+      author: responseJson.articles[i].author,
+      description: responseJson.articles[i].description
+    }
+
+    Newsclips[i]=newsOject;
+
     $('.results-news').append(
       `<li>
       <div class="image">
-      <a href="${responseJson.articles[i].url}" data-lity><img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower"></a>
+      <img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower" data-lity>
       </div>
       <div class="video-content">
-      <p class ="title"><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></p>
+      <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></p>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <p class="description"> Read Description</p>
       
@@ -203,13 +214,13 @@ function watchForm() {
     getNews(query, 7);
   });
 
-  displayModal();
-  closeModal();
+  displayVideoModal();
+  closeVideoModal();
   watchVideo();
 }
 
 $(function() {
   console.log('App loaded! Waiting for submit!');
-  $(".query-number").attr("value", 3);
+  $(".query-number").attr("value", 'cat');
   watchForm();
 });
