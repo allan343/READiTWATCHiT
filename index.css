@@ -2,8 +2,47 @@
   box-sizing: border-box;
 }
 
+header{
+  background-image: url("Background1.jpg");
+  height: 100vh;
+}
+
+.tagline {
+  padding-top: 200px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 40px;
+  color: white;
+  
+  padding-bottom: 20px;
+  font-size: 58px;
+  font-weight: 300;
+
+}
+.searchField{
+  margin-top: 80px;
+ text-align: center;
+ 
+}
+input{
+  font-size: 45px;
+  border:none;
+  background:none;
+  border-bottom: 3px solid ghostwhite;
+  padding-left: 50px;
+  padding-right: 50px;
+  color:white;
+}
+
+.myButton{
+  border: 3px solid ghostwhite;
+
+}
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: darkslategray;
   background-color: grey;
 }
 
