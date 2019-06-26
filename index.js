@@ -179,7 +179,7 @@ for(let i =0; i< responseJson.items.length;i++)
   $('.results-img').append(
     `<li>
     
-    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}"  title="White flower" alt="Flower"></a>
+    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId} " data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}" class="youtube-image"  title="White flower" alt="Flower"></a>
     </div>
   
     <div class="video-content">
