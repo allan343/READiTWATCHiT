@@ -153,6 +153,13 @@ function getYTImages(query) {
     
 }
 
+function formatDate(date){
+  
+  var d=new Date(date);
+  var returnDate=`${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+return returnDate;
+}
+
 function displayResults(responseJson) {
  /* console.log(responseJson);
   console.log(responseJson.items[1]);
@@ -183,7 +190,7 @@ for(let i =0; i< responseJson.items.length;i++)
     </div>
   
     <div class="video-content">
-    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${responseJson.items[i].snippet.publishedAt} - ${responseJson.items[i].snippet.channelTitle}</p>
+    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p><p class ="date">${formatDate(responseJson.items[i].snippet.publishedAt)} - ${responseJson.items[i].snippet.channelTitle}</p>
     <button type="button" class= "description" index="${i}">Read Description</button>
     </div>
     </li>
