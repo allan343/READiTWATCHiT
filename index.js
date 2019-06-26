@@ -186,7 +186,7 @@ for(let i =0; i< responseJson.items.length;i++)
   $('.results-img').append(
     `<li>
     
-    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId} " data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}" class="youtube-image"  title="White flower" alt="Flower"></a>
+    <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId} " data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}" class="youtube-image"  title="youtube image" alt="youtube image"></a>
     </div>
   
     <div class="video-content">
@@ -238,7 +238,7 @@ function displayNewsResults(responseJson, maxResults) {
     $('.results-news').append(
       `<li>
       <div class="image">
-      <img src="${responseJson.articles[i].urlToImage}" style="width:82px; height:86px" title="White flower" alt="Flower" data-lity>
+      <img src="${responseJson.articles[i].urlToImage}" class="article-image"  title="artile image" alt="article image" data-lity>
       </div>
       <div class="video-content">
       <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></p>
