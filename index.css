@@ -113,8 +113,10 @@ li {
   
 }
 .title{
+  margin-top: 30px;
   display: block;
   font-size:12px;
+  font-weight: 400px;
 }
 .date,.source, .author, .description{
   font-size: 12px;
