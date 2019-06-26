@@ -22,7 +22,7 @@ function displayVideoModal(){
   <button class="close">&times;</button>
   <p> ${YTclips[index].title}</p>
   <hr>
-  <p>${YTclips[index].date} - ${YTclips[index].channelTitle}</p>
+  <p>posted by ${YTclips[index].channelTitle} on ${formatDate(YTclips[index].date)}</p>
   <p>${YTclips[index].description}</p>
   <div class= "buttonContainer">
   <a href="https://www.youtube.com/embed/${YTclips[index].videoId}" class ="videoUrlButton" index="i" data-lity>Go to Video</a>
