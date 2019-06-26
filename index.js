@@ -65,7 +65,7 @@ function displayNewsModal(){
   <button class="close">&times;</button>
   <p> ${Newsclips[index].title}</p>
   <hr>
-  <p>${Newsclips[index].source} - ${YTclips[index].Author}</p>
+  <p>${Newsclips[index].source} - ${Newsclips[index].author}</p>
   <p>${Newsclips[index].description}</p>
   <div class= "buttonContainer">
   <a href=" ${Newsclips[index].url}" class ="readArticleButton" target="_blank">Read Article</a>
