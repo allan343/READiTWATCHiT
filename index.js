@@ -243,6 +243,7 @@ function displayNewsResults(responseJson, maxResults) {
       </div>
       <div class="video-content">
       <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></p>
+      <hr>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <button type="button" class= "newsDescription" index="${i}">Read Description</button>
       
