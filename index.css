@@ -102,6 +102,12 @@ body {
   background-color: white;
 }
 
+.box{
+  text-align: right;
+  font-size: 40px;
+  margin: 0px;
+  padding: 10px 20px 0px;
+}
 .results-img, .results-news{
   display: inline-block;
  
