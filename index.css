@@ -94,9 +94,17 @@ body {
   margin-left: auto;
   margin-right:auto;
 }
-.results-img, .results-news{
+.news-container, .video-container{
   display: inline-block;
   width: 47%;
+  height: 100%;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.results-img, .results-news{
+  display: inline-block;
+ 
   height: 100%;
   list-style: none; 
   background-color: white;
@@ -111,9 +119,15 @@ li {
  width: 100%;
  height: 150px;
 }
+
+.video-container{
+   float:right;
+   margin-right: 22px;
+   
+ }
 .results-img{
-  float:right;
-  margin-right: 22px;
+ /* float:right; change here
+  margin-right: 22px;*/
   
 }
 
@@ -139,11 +153,15 @@ li {
   text-decoration: none;
   line-height: 0.2;
 }
-
+/*
 .results-news{
   margin-left:  22px;
-}
+}change here
+*/
 
+.news-container{
+  margin-left:  22px;
+}
 
 .image{
   width: 40%;
