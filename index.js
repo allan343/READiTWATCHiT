@@ -189,7 +189,7 @@ for(let i =0; i< responseJson.items.length;i++)
     <div class="image"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId} " data-lity><img src="${responseJson.items[i].snippet.thumbnails.default.url}" class="youtube-image"  title="youtube image" alt="youtube image"></a>
     </div>
     <div class="video-content">
-    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity>${responseJson.items[i].snippet.title}</a></p>
+    <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity><span class="question">&#63;</span> ${responseJson.items[i].snippet.title}</a></p>
     <hr>
     <p class ="date">${formatDate(responseJson.items[i].snippet.publishedAt)} - ${responseJson.items[i].snippet.channelTitle}</p>
     <button type="button" class= "description" index="${i}">Read Description</button>
@@ -242,7 +242,7 @@ function displayNewsResults(responseJson, maxResults) {
       <img src="${responseJson.articles[i].urlToImage}" class="article-image"  title="artile image" alt="article image" data-lity>
       </div>
       <div class="video-content">
-      <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></p>
+      <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank"><span class="question">&#63;</span>${responseJson.articles[i].title}</a></p>
       <hr>
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <button type="button" class= "newsDescription" index="${i}">Read Description</button>

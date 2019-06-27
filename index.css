@@ -12,9 +12,17 @@ header{
   /*filter: brightness(0.4);*/
 }
 
+.question{
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+  background-color: grey;
+  color: white;
+  padding: 1px 4px;
+}
 .description, .newsDescription, a.videoUrlButton, a.readArticleButton {
   
-    background-color: rgb(2, 5, 2);
+    background-color: grey;
     border: none;
     color: white;
     padding: 6px 16px;
