@@ -117,6 +117,16 @@ li {
   
 }
 
+.title-container{
+  text-align: center;
+  font-size: 28px;
+  background-color: white;
+  width: 1066px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .results-img .image, .results-news .image{
   /*width: 190px;*/
   margin-top:20px;
@@ -188,7 +198,6 @@ a.videoUrlButton, a.readArticleButton {
   border-color : #000000;
   margin-left: auto;
   margin-right:auto;
-
 }*/
 .buttonContainer{
   width: 100%;
