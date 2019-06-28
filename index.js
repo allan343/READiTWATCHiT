@@ -131,7 +131,7 @@ function getNews(query, maxResults=10) {
 function getYTImages(query) {
     console.log(query);
   
-    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyDOGebeDBNkAfaUNohpEAqrb2J6NXFRzhs`;
+    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=7&q=${query}&key=AIzaSyDOGebeDBNkAfaUNohpEAqrb2J6NXFRzhs`;
     console.log(url);
   fetch(url)
     .then(response => response.json())
@@ -190,7 +190,7 @@ for(let i =0; i< responseJson.items.length;i++)
     </div>
     <div class="video-content">
     <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity><span class="question">&#63;</span> ${responseJson.items[i].snippet.title}</a></p>
-    <hr>
+    <hr class="line">
     <p class ="date">${formatDate(responseJson.items[i].snippet.publishedAt)} - ${responseJson.items[i].snippet.channelTitle}</p>
     <button type="button" class= "description" index="${i}">Read Description</button>
     </div>
@@ -243,7 +243,7 @@ function displayNewsResults(responseJson, maxResults) {
       </div>
       <div class="video-content">
       <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank"><span class="question">&#63;</span>${responseJson.articles[i].title}</a></p>
-      <hr>
+      <hr class= "line">
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
       <button type="button" class= "newsDescription" index="${i}">Read Description</button>
       
