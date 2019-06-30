@@ -12,6 +12,9 @@ header{
   /*filter: brightness(0.4);*/
 }
 
+.query-number,.myButton{
+  max-width: 100%;
+}
 .question{
   border-radius: 100%;
   width: 5px;
@@ -141,7 +144,8 @@ li {
   text-align: center;
   font-size: 28px;
   background-color: white;
-  width: 1066px;
+ /*width: 1066px;*/
+ width: 100%;
   margin-left:auto;
   margin-right:auto;
   padding-top: 25px;
@@ -263,6 +267,7 @@ margin-right: 30px;
 }
 
 @media screen and (max-width: 750px) {
+
 
   .news-container,.video-container{
     display:block;
