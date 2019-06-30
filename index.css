@@ -257,6 +257,11 @@ margin-right: 30px;
 
 }
 
+.real-description{
+  display: block;
+  visibility: hidden;
+}
+
 @media screen and (max-width: 750px) {
 
   .news-container,.video-container{
@@ -280,6 +285,13 @@ margin-right: 30px;
 
   .title, .source, .date{
     font-size: 17px;
+  }
+  .description,.newsDescription{
+    display:none;
+  }
+  .real-description{
+    display: block;
+    visibility: visible;
   }
 }
 
@@ -307,5 +319,13 @@ margin-right: 30px;
 
   .title, .source, .date{
     font-size: 17px;
+  }
+
+  .description,.newsDescription{
+    display:none;
+  }
+  .real-description{
+    display: block;
+    visibility: visible;
   }
 }
