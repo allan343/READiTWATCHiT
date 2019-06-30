@@ -262,7 +262,7 @@ margin-right: 30px;
 }
 
 .real-description{
-  display: block;
+  display: none;
   visibility: hidden;
 }
 
@@ -297,6 +297,7 @@ margin-right: 30px;
   .real-description{
     display: block;
     visibility: visible;
+    line-height: 25px;
   }
 }
 
@@ -332,5 +333,6 @@ margin-right: 30px;
   .real-description{
     display: block;
     visibility: visible;
+    line-height: 25px;
   }
 }

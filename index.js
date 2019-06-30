@@ -192,7 +192,7 @@ for(let i =0; i< responseJson.items.length;i++)
     <p class ="title"><a href="https://www.youtube.com/embed/${responseJson.items[i].id.videoId}" index="i" data-lity><span class="question">&#63;</span> ${responseJson.items[i].snippet.title}</a></p>
     <hr class="line">
     <p class ="date">${formatDate(responseJson.items[i].snippet.publishedAt)} - ${responseJson.items[i].snippet.channelTitle}</p>
-    <p hidden class ="real-descripton"> ${responseJson.items[i].snippet.description}</p>
+    <p class ="real-description"> ${responseJson.items[i].snippet.description}</p>
     <button type="button" class= "description" index="${i}">Read Description</button>
     </div>
     </li>
@@ -246,7 +246,7 @@ function displayNewsResults(responseJson, maxResults) {
       <p class ="title"><a href="${responseJson.articles[i].url}" target="_blank"><span class="question">&#63;</span>${responseJson.articles[i].title}</a></p>
       <hr class= "line">
       <p class="source">${responseJson.articles[i].source.name} By ${responseJson.articles[i].author}</p>
-      <p hidden class ="real-descripton"> ${responseJson.articles[i].description}</p>
+      <p class ="real-description"> ${responseJson.articles[i].description}</p>
       <button type="button" class= "newsDescription" index="${i}">Read Description</button>
       
       </div>
