@@ -326,6 +326,15 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
+.query-number, .myButton{
+  max-width: 95%;
+  font-size: 35px;
+}
+
+.tagline, .title-container{
+  font-size: 25px;
+}
+
   .news-container, .video-container {
     display: block;
     width: 100%;
