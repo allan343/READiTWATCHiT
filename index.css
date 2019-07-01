@@ -325,7 +325,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
 .query-number, .myButton{
   max-width: 95%;
   font-size: 35px;
