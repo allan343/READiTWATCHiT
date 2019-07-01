@@ -331,6 +331,9 @@ footer {
   font-size: 35px;
 }
 
+.searchField{
+  margin-top: 0px;
+}
 .tagline, .title-container{
   font-size: 25px;
 }
