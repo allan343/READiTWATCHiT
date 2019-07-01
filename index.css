@@ -294,15 +294,17 @@ footer {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 10px;
   }
   .article-image, .youtube-image {
     width: 100%;
-    height: auto;
+    max-height: 280px;
     vertical-align: bottom;
   }
-  .results-news {
+  .results-news,.results-img {
     display: block;
     width: 100%;
+    padding: 0;
   }
   .video-content, .image {
     display: block;
