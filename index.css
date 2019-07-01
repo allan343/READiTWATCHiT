@@ -330,9 +330,7 @@ footer {
   max-width: 95%;
   font-size: 35px;
 }
-.title{
-  margin-top: 0px;
-}
+
 .searchField{
   margin-top: 0px;
 }
@@ -346,9 +344,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-  .results-news {
+  .results-news, .results-img {
     display: block;
     width: 100%;
+    padding: 0px;
   }
   .video-content, .image {
     display: block;
@@ -359,6 +358,7 @@ footer {
   }
   .title, .source, .date {
     font-size: 17px;
+    padding: 0 10px;
   }
   .description, .newsDescription {
     display: none;
@@ -367,5 +367,13 @@ footer {
     display: block;
     visibility: visible;
     line-height: 25px;
+    padding: 0 10px;
+  }
+  .results{
+    padding: 0 10px;
+  }
+
+  .article-image, .youtube-image{
+    height: 181px;
   }
 }
