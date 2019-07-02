@@ -2,12 +2,8 @@
   box-sizing: border-box;
 }
 
-
-
-
 .search-container {
   display: block;
-  /* margin-top:-24px;*/
 }
 
 header {
@@ -96,7 +92,6 @@ body {
 }
 
 .container {
-  /* max-width: 600px;*/
   margin: 0 auto;
 }
 
@@ -227,6 +222,13 @@ a {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .buttonContainer {
