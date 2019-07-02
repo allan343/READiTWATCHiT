@@ -12,6 +12,7 @@ const searchURL = 'https://newsapi.org/v2/everything';
 function displayVideoModal() {
   $('.container').on('click', '.description', function (event) {
     $('#videoModal').css('display', 'block');
+    $('#videoModal').focus();
     var index = $(this).attr('index');
 
     $('.videoModal-content').html(
@@ -46,6 +47,7 @@ function watchVideo() {
 function displayNewsModal() {
   $('.container').on('click', '.newsDescription', function (event) {
     $('#newsModal').css('display', 'block');
+    $('#newsModal').focus();
     var index = $(this).attr('index');
 
     $('.newsModal-content').html(
