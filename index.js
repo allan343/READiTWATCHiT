@@ -12,8 +12,6 @@ const searchURL = 'https://newsapi.org/v2/everything';
 function displayVideoModal() {
   $('.container').on('click', '.description', function (event) {
     $('#videoModal').css('display', 'block');
-
-    console.log("index is " + $(this).attr('index'));
     var index = $(this).attr('index');
 
     $('.videoModal-content').html(
@@ -48,8 +46,6 @@ function watchVideo() {
 function displayNewsModal() {
   $('.container').on('click', '.newsDescription', function (event) {
     $('#newsModal').css('display', 'block');
-
-    console.log("index is " + $(this).attr('index'));
     var index = $(this).attr('index');
 
     $('.newsModal-content').html(
@@ -93,7 +89,6 @@ function getNews(query, maxResults = 10) {
   };
   const queryString = formatQueryParams(params)
   const url = searchURL + '?' + queryString;
-  console.log(url);
   const options = {
     headers: new Headers({
       "X-Api-Key": apiKey
@@ -114,19 +109,15 @@ function getNews(query, maxResults = 10) {
 }
 
 function getYTImages(query) {
-  console.log(query);
 
   let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=7&q=${query}&key=AIzaSyDOGebeDBNkAfaUNohpEAqrb2J6NXFRzhs`;
-  console.log(url);
   fetch(url)
     .then(response => response.json())
     .then(responseJson => {
-      console.log(responseJson)
       displayResults(responseJson)
 
     })
     .catch(error => {
-      console.log(error.message);
       alert('Something went wrong. Try again later.');
     }
     )
@@ -216,7 +207,6 @@ function watchForm() {
   var query;
   $('form').submit(event => {
     query = $('.query-number').val();
-    console.log(query);
     event.preventDefault();
     getYTImages(query);
     getNews(query, 7);
@@ -231,7 +221,6 @@ function watchForm() {
 }
 
 $(function () {
-  console.log('App loaded! Waiting for submit!');
   $(".query-number").attr("value", 'cat');
   watchForm();
 });
