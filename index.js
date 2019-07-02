@@ -12,7 +12,7 @@ const searchURL = 'https://newsapi.org/v2/everything';
 function displayVideoModal() {
   $('.container').on('click', '.description', function (event) {
     $('#videoModal').css('display', 'block');
-    $('.newsClose').focus();
+    $('.close').focus();
     var index = $(this).attr('index');
 
     $('.videoModal-content').html(
