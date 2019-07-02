@@ -266,7 +266,7 @@ footer {
   visibility: hidden;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 750px) {
 
   .news-container, .video-container {
     display: block;
