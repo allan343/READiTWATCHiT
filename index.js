@@ -134,7 +134,8 @@ function formatDate(date) {
 }
 
 function displayResults(responseJson) {
-
+  $(".search-container" ).remove();
+  $(".new-search").show();
   $('.results-img').html("");
   let link = "";
   for (let i = 0; i < responseJson.items.length; i++) {

@@ -4,11 +4,13 @@
 
 .search-container {
   display: block;
+  background-image: url("Background1.jpg");
+  height: 100vh;
 }
 
 header {
-  background-image: url("Background1.jpg");
- height: 100vh;
+ /* background-image: url("Background1.jpg");
+ height: 100vh;*/
 
 }
 
