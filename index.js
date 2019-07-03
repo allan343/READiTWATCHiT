@@ -12,7 +12,6 @@ const searchURL = 'https://newsapi.org/v2/everything';
 function displayVideoModal() {
   $('.container').on('click', '.description', function (event) {
     $('#videoModal').css('display', 'block');
-    $('.close').focus();
     var index = $(this).attr('index');
 
     $('.videoModal-content').html(
@@ -28,6 +27,7 @@ function displayVideoModal() {
  </div>
   `
     );
+    $('.close').focus();
   });
 }
 
@@ -47,7 +47,6 @@ function watchVideo() {
 function displayNewsModal() {
   $('.container').on('click', '.newsDescription', function (event) {
     $('#newsModal').css('display', 'block');
-    $('.close').focus();
     var index = $(this).attr('index');
 
     $('.newsModal-content').html(
@@ -63,6 +62,7 @@ function displayNewsModal() {
  </div>
   `
     );
+    $('.close').focus();
   });
 }
 
