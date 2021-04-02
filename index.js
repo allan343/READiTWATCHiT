@@ -6,7 +6,7 @@ var Newsclips = [];
 
 const apiKey = "352d6669b5f446188152fd93ee7ccf52";
 
-const searchURL = 'https://afternoon-caverns-74093.herokuapp.com/news';
+const searchURL = 'https://apricot-tart-05291.herokuapp.com/news';
 
 
 function displayVideoModal() {
